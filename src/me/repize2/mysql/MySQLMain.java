@@ -13,16 +13,16 @@ public class MySQLMain {
 	
 	public static void open() {
 		
-		String url = "jdbc:mysql://144.217.170.82:3306/s391_VOKEPVP";
-		String user = "u391_rpz9PWe24P";
-		String pass = "7r5gWD183PZJQj9uDpF1UTs4";
+		String url = "jdbc:mysql://mysql_private_user/mysql_private_database";
+		String user = "mysql_private_user";
+		String pass = "mysql_private_password";
 		
 		try {
 			con = DriverManager.getConnection(url, user, pass);
-			Bukkit.getConsoleSender().sendMessage("§a[REPIZE] Conexao com MySQL (Banimentos) sucessida.");
+			Bukkit.getConsoleSender().sendMessage("Â§a[REPIZE] Conexao com MySQL (Banimentos) sucessida.");
 			tabela();
 		} catch (SQLException e) {
-			Bukkit.getConsoleSender().sendMessage("§a[REPIZE] §cConexao com MySQL (Banimentos) nao sucessida.");
+			Bukkit.getConsoleSender().sendMessage("Â§a[REPIZE] Â§cConexao com MySQL (Banimentos) nao sucessida.");
 		}
 	}
 	
@@ -32,9 +32,9 @@ public class MySQLMain {
 		try {
 			stm = con.prepareStatement("create table if not exists `banimentos`(UUID varchar(64), Nick text, Mutado INT, Banido INT)");
 			stm.executeUpdate();
-			Bukkit.getConsoleSender().sendMessage("§a[REPIZE] §aTebela de banimentos concluida.");
+			Bukkit.getConsoleSender().sendMessage("Â§a[REPIZE] Â§aTebela de banimentos concluida.");
 		} catch (SQLException e) {
-			Bukkit.getConsoleSender().sendMessage("§a[REPIZE] §cTebela de banimentos nao foi concluida.");
+			Bukkit.getConsoleSender().sendMessage("Â§a[REPIZE] Â§cTebela de banimentos nao foi concluida.");
 		}
 	}
 }
