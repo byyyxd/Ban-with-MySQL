@@ -1,0 +1,9 @@
+name: VokeBans
+version: 1.0
+author: REPIZEreturns
+main: me.repize2.Main
+commands:
+    ban:
+    unban:
+    mute:
+    unmute:
